@@ -14,7 +14,16 @@ unitCol.addEventListener("input",handler);
 function handler(e){
     let profit = e.target.previousElementSibling;
     let totalProfit = e.target.nextElementSibling.nextElementSibling;
-    totalProfit.textContent =  parseInt(e.target.textContent) *   parseInt(profit.textContent);
+    let x = parseInt(e.target.textContent);
+    let y = parseInt(profit.textContent);
+    
+    if(Number.isNaN(x) || x<0){
+        totalProfit.textContent =0;
+    }
+    else{
+        totalProfit.textContent =  x*y;
+    }
+
 }
 
 
